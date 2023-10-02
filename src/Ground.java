@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -79,6 +81,34 @@ public class Ground extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String competitorsName = insertNameBox.getText();
                 JOptionPane.showMessageDialog(Ground.this, "Hello " + competitorsName + ", good luck today! Your name is now saved in the database.");
+            }
+        });
+        scoreHep100mHurdles.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateScore();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateScore();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                // Not used for plain text documents
+            }
+
+            private void updateScore() {
+                String scoreString = scoreHep100mHurdles.getText();
+                double score = 0;
+                try {
+                    score = Double.parseDouble(scoreString);
+                } catch (NumberFormatException ex) {
+                    // Ignore invalid scores
+                }
+                double points = score / 2;
+                scoreHep100mHurdlesPoints.setText(String.format("%.2f", points));
             }
         });
     }
