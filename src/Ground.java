@@ -60,7 +60,7 @@ public class Ground extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String competitorsName = insertNameBox.getText();
-                JOptionPane.showMessageDialog(Ground.this, "Hello " + competitorsName + ", good luck today! Your name is now saved in the databas.");
+                JOptionPane.showMessageDialog(Ground.this, "Hello " + competitorsName + ", good luck today! Your name is now saved in the database.");
             }
         });
     }
