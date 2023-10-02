@@ -48,6 +48,23 @@ public class Ground extends JFrame {
     private JPanel GroundPanel;
     private JButton buttonCalculate;
     private JButton buttonEraseScore;
+    private JTextField scoreHep100mHurdlesPoints;
+    private JTextField scoreDeca100mPoints;
+    private JTextField scoreHepHighJumpPoints;
+    private JTextField scoreDecaLongJumpPoints;
+    private JTextField scoreHepShotPutPoints;
+    private JTextField scoreDecaShotPutPoints;
+    private JTextField scoreHep200mPoints;
+    private JTextField scoreDecaHighJumpPoints;
+    private JTextField scoreHepLongJumpPoints;
+    private JTextField scoreDeca400mPoints;
+    private JTextField scoreHepJavelinThrowPoints;
+    private JTextField scoreDeca110mHurdlesPoints;
+    private JTextField scoreHep800mPoints;
+    private JTextField scoreDecaDiscusThrowPoints;
+    private JTextField scoreDecaPoleVaultPoints;
+    private JTextField scoreDecaJavelinThrowPoints;
+    private JTextField scoreDeca1500mPoints;
 
     public Ground () {
         setContentPane(GroundPanel);
@@ -55,6 +72,7 @@ public class Ground extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1000, 1700);
         setLocationRelativeTo(null);
+        pack();
         setVisible(true);
         buttonEnterName.addActionListener(new ActionListener() {
             @Override
